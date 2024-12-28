@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Source Code Pro' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Менеджер</title>
+</head>
+<body>
+
+    <div class="body">
+
+        <div class="header_profile">
+            <a href="index.html">
+                <img src="../assets/img/svg's/chevron-left.png" width="22px" height="24px" alt="">
+            </a>
+        </div>
+        
+        <div class="header_profile_text">
+            <p>
+                Заказы
+            </p>
+        </div>
+
+
+        <div class="navigation_profile_container">
+            <div class="navigation_profile_box">
+                <p style="text-align: center; padding-top: 9px;">
+                    12 апреля, 20:01
+                </p>
+                <div class="number_profile">
+                    <h1>
+                        № 4124
+                    </h1>
+        
+
+                    <button id="openModalBtns">В обработке</button>
+
+                    <div id="myModals" class="modals">
+                        <div class="modal-contents">
+                            <div class="status-containers">
+                                <div class="status-buttons red" data-status="принято">принято</div>
+                                <div class="status-buttons red" data-status="готовится">готовится</div>
+                                <div class="status-buttons red" data-status="ждёт курьера">ждёт курьера</div>
+                                <div class="status-buttons red" data-status="в пути">в пути</div>
+                                <div class="status-buttons red" data-status="готово">готово</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <script>
+                      
+                        var modal = document.getElementById("myModals");
+                        var openModalBtn = document.getElementById("openModalBtns");
+                        var statusButtons = document.querySelectorAll(".status-buttons");
+                    
+                    
+                        openModalBtn.onclick = function() {
+                            modal.style.display = "block";
+                        }
+                    
+                        window.onclick = function(event) {
+                            if (event.target == modal) {
+                                modal.style.display = "none";
+                            }
+                        }
+                    
+                      
+                        statusButtons.forEach(button => {
+                            button.onclick = function() {
+                                openModalBtn.textContent = this.dataset.status;
+                                modal.style.display = "none";
+                            }
+                        });
+                    </script>
+                    
+    
+                    <button style="position: absolute; width: 19px; height: 19px; border-radius: 50%; background-color: #E12624; margin-top: 5px; margin-left: 22em; ">
+                        <svg style="margin-left: -1.6px;" width="11" height="9" viewBox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.24498 1.65445C8.61315 1.28694 9.21009 1.28694 9.57826 1.65445C9.94644 2.02196 9.94644 2.61781 9.57826 2.98532L4.24512 8.30881C3.87694 8.67632 3.28 8.67632 2.91183 8.30881C2.54365 7.9413 2.54365 7.34545 2.91183 6.97794L8.24498 1.65445Z" fill="white"/>
+                            <rect width="1.88385" height="5.09264" rx="0.941923" transform="matrix(-0.707748 0.706465 0.707748 0.706465 1.33325 4.04565)" fill="white"/>
+                         </svg>                            
+                    </button>
+                </div>
+                
+                
+                <div class="price_container">
+                    <p style="font-weight: 700; font-size: 14px; margin-top: -10px;">
+                        Состав заказа
+                    </p>
+                </div>
+
+
+                <div class="navigation_order_box">
+                    <img style="margin-top: 10px;" src="../assets/img/index/1.png" width="72px" height="66px" alt="">
+                    <div class="navigation_order_inside">
+                        <h2>
+                            Пицца Чикаго <span style="margin-left: 35px; color: #ADADAF; font-weight: 700; font-size: 12px;">1 x</span><span style="color: #000; font-size: 14px; font-weight: 600; margin-left: 10px;">535 ₽</span>
+                        </h2>
+                        <p>
+                            Состав: курица, <br> помидор, грибы, сыр
+                        </p>
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="navigation_order_box">
+                    <img style="margin-top: 10px;" src="../assets/img/index/2.png" width="72px" height="66px" alt="">
+                    <div class="navigation_order_inside">
+                        <h2>
+                            Пицца Кальяри <span style="margin-left: 25px; color: #ADADAF; font-weight: 700; font-size: 12px;">1 x</span><span style="color: #000; font-size: 14px; font-weight: 600; margin-left: 10px;">580 ₽</span>
+                        </h2>
+                        <p>
+                            Состав: курица, <br> перец, грибы, маслины
+                        </p>
+                    </div>
+                </div>
+                <br>
+
+                <div class="price_container">
+                    <div class="inside_price">
+                        <p style="font-weight: bold; font-size: 16px;">
+                            Итого с доставкой
+                        </p>
+                        <p style="font-weight: bold; font-size: 16px;">
+                            1214 ₽ 
+                        </p>
+                    </div>
+                </div>
+
+
+                <hr style="width: 85%; margin: auto;">
+
+                <div class="info_container">
+                    <div class="info_box">
+                        <p>Адрес получателя <br> 
+                            <span style="font-weight: 500; color: #000;"> 
+                                Чехова улица, дом 16
+                            </span>
+                        </p>
+                    </div>
+                    <div class="info_box">
+                        <p>Телефон заказчика<br> 
+                            <span style="font-weight: 500; color: #000;"> 
+                                +79193970651
+                            </span>
+                        </p>
+                    </div>
+                    <div class="info_box">
+                        <p>Комментарий<br> 
+                            <span style="font-weight: 500; color: #000;"> 
+                                Поострее пепперони! и телефон для связи с курьером
+                            </span>
+                        </p>
+                    </div>
+                    <div class="info_box">
+                        <p>Дата и время заказа<br> 
+                            <span style="font-weight: 500; color: #000;"> 
+                                12 апреля 2024 в 12:05
+                            </span>
+                        </p>
+                    </div>  
+                </div>
+            </div>
+        </div>
+
+
+        <div class="navigation_profile_container">
+            <div class="navigation_profile_box">
+                <p style="text-align: center; padding-top: 9px;">
+                    12 апреля, 20:01
+                </p>
+                <div class="number_profile">
+                    <h1>
+                        № 4124
+                    </h1>
+                    <button style="width: 100px; ">
+                        В обработке
+                    </button>
+                    <button style="position: absolute; width: 19px; height: 19px; border-radius: 50%; background-color: #E12624; margin-top: 5px; margin-left: 22em; ">
+                        <svg style="margin-left: -1.6px;" width="10" height="10" viewBox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.24498 1.65445C8.61315 1.28694 9.21009 1.28694 9.57826 1.65445C9.94644 2.02196 9.94644 2.61781 9.57826 2.98532L4.24512 8.30881C3.87694 8.67632 3.28 8.67632 2.91183 8.30881C2.54365 7.9413 2.54365 7.34545 2.91183 6.97794L8.24498 1.65445Z" fill="white"/>
+                            <rect width="1.88385" height="5.09264" rx="0.941923" transform="matrix(-0.707748 0.706465 0.707748 0.706465 1.33325 4.04565)" fill="white"/>
+                        </svg>                            
+                    </button>
+                </div>
+                
+                <div class="price_container">
+                    <p style="font-weight: 700; font-size: 14px; margin-top: -10px;">
+                        Состав заказа
+                    </p>
+                </div>
+
+                <div class="navigation_order_box">
+                    <img style="margin-top: 10px;" src="../assets/img/index/1.png" width="72px" height="66px" alt="">
+                    <div class="navigation_order_inside">
+                        <h2>
+                            Пицца Чикаго <span style="margin-left: 35px; color: #ADADAF; font-weight: 700; font-size: 12px;">1 x</span><span style="color: #000; font-size: 14px; font-weight: 600; margin-left: 10px;">535 ₽</span>
+                        </h2>
+                        <p>
+                            Состав: курица, <br> помидор, грибы, сыр
+                        </p>
+                    </div>
+                </div>
+
+                <br>
+
+
+                <div class="price_container">
+                    <div class="inside_price">
+                        <p style="font-weight: bold; font-size: 16px;">
+                            Итого с доставкой
+                        </p>
+                        <p style="font-weight: bold; font-size: 16px;">
+                            634 ₽ 
+                        </p>
+                    </div>
+                </div>
+
+
+                <hr style="width: 85%; margin: auto;">
+
+                <div class="info_container">
+                    <div class="info_box">
+                        <p>Адрес получателя <br> 
+                            <span style="font-weight: 500; color: #000;"> 
+                                Студенческая улица, дом 3
+                            </span>
+                        </p>
+                    </div>
+                    <div class="info_box">
+                        <p>Телефон заказчика<br> 
+                            <span style="font-weight: 500; color: #000;"> 
+                                +79193970651
+                            </span>
+                        </p>
+                    </div>
+                    <div class="info_box">
+                        <p>Комментарий<br> 
+                            <span style="font-weight: 500; color: #000;"> 
+                                Я очень голодный
+                            </span>
+                        </p>
+                    </div>
+                    <div class="info_box">
+                        <p>Дата и время заказа<br> 
+                            <span style="font-weight: 500; color: #000;"> 
+                                05 апреля 2024 в 22:37
+                            </span>
+                        </p>
+                    </div>  
+                </div>
+            </div>
+        </div>  
+
+        <div class="logout">
+            <a href="../register/login.html">
+                <button class="logout_btn">
+                    Выйти
+                </button>
+            </a>
+        </div>
+
+        <br><br><br><br><br>
+
+    </div>  
+    
+    
+</body>
+</html>
